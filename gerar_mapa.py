@@ -129,9 +129,11 @@ for m in d['members']:
         if ATE and quando.date() > ATE: continue
         msgs = cv.get('messages') or []
         humanas = sum(1 for x in msgs if (x.get('participantType') or '').upper() == 'HUMAN')
-        runs[nome].append({'q': quando, 'humanas': humanas, 'uc': cv['usecaseId']})
         ev = cv.get('evaluation')
-        if not ev or ev.get('score') is None or not (ev.get('feedback') or '').strip(): continue
+        avaliada = bool(ev and ev.get('score') is not None and (ev.get('feedback') or '').strip())
+        runs[nome].append({'q': quando, 'humanas': humanas, 'uc': cv['usecaseId'], 'aval': avaliada,
+                           'us': cv.get('userSpeakingDurationMs') or 0, 'ai': cv.get('aiSpeakingDurationMs') or 0})
+        if not avaliada: continue
         cen, area = UC.get(cv['usecaseId'], ('Outros', 'Outros'))
         f_txt, m_txt = secoes(ev['feedback'])
         # mesma calibração do dashboard: nota 0 com debriefing estruturado vale 58
@@ -250,12 +252,44 @@ while (y, mth) <= (max(todas).year, max(todas).month):
     meses.append({'m': mm, 'score': media(ls), 'n': len(ls), 'runs': len(rr), 'lideranca': lid, 'motivo': motivo,
                   'corretores': len({s['nome'] for s in sessoes if s['q'].strftime('%Y-%m') == mm and not lider(s['nome'])})})
     y, mth = (y + 1, 1) if mth == 12 else (y, mth + 1)
+# Prática (para a aba "Resultados"): horas de conversa, equilíbrio de fala e profundidade das conversas.
+# Considera runs com diálogo real (fala dos dois lados e 3+ falas do corretor); compara 1ª × 2ª metade, só corretores.
+def pratica():
+    todos = [r for n, rs_ in runs.items() for r in rs_]
+    dial = sorted([r for n, rs_ in runs.items() if not lider(n) for r in rs_ if r['us'] > 0 and r['ai'] > 0 and r['humanas'] >= 3], key=lambda r: r['q'])
+    res = {'horas': round(sum(r['us'] + r['ai'] for r in todos) / 3.6e6, 1), 'runsDialogo': len(dial),
+           'minutosPorRun': round(sum(r['us'] + r['ai'] for r in dial) / len(dial) / 60000, 1) if dial else None}
+    if len(dial) >= 10:
+        h = len(dial) // 2; a, b = dial[:h], dial[h:]
+        razao = lambda xs: round(sum(r['us'] for r in xs) / max(1, sum(r['ai'] for r in xs)), 2)
+        turnos = lambda xs: round(sum(r['humanas'] for r in xs) / len(xs), 1)
+        res.update({'falaIni': razao(a), 'falaRec': razao(b), 'turnosIni': turnos(a), 'turnosRec': turnos(b)})
+    # quantos corretores (6+ runs com diálogo) passaram a falar proporcionalmente menos
+    melhor = tot = 0
+    for n, rs_ in runs.items():
+        if lider(n): continue
+        ok = sorted([r for r in rs_ if r['us'] > 0 and r['ai'] > 0 and r['humanas'] >= 3], key=lambda r: r['q'])
+        if len(ok) < 6: continue
+        h = len(ok) // 2; a, b = ok[:h], ok[h:]
+        tot += 1; melhor += (sum(r['us'] for r in b) / max(1, sum(r['ai'] for r in b))) < (sum(r['us'] for r in a) / max(1, sum(r['ai'] for r in a)))
+    res.update({'corretoresOuvemMais': melhor, 'corretoresComCorpus': tot})
+    # De todas as simulações iniciadas, quantas viraram conversa de treino (avaliada ou com 3+ falas do corretor)
+    def grupo(f):
+        xs = [r for r in todos if f(r)]
+        return {'n': len(xs), 'min': round(sum(r['us'] + r['ai'] for r in xs) / len(xs) / 60000, 1) if xs else 0}
+    res['contagem'] = {'iniciadas': len(todos),
+                       'avaliadas': grupo(lambda r: r['aval']),
+                       'conversaSemAval': grupo(lambda r: not r['aval'] and r['humanas'] >= 3),
+                       'curtas': grupo(lambda r: not r['aval'] and 1 <= r['humanas'] < 3),
+                       'semFala': grupo(lambda r: not r['aval'] and r['humanas'] == 0)}
+    return res
+
 out = {'gerado': (datetime.utcnow() + BRT).strftime('%d/%m/%Y %H:%M'), 'fonte': DUMP.split('/')[-1].split('_', 1)[-1],
        'empresas': [{'id': 'metlife', 'nome': 'MetLife',
                      'skills': [{'k': k, 'emoji': e, 'nome': n, 'desc': ds} for k, e, n, ds, _ in SKILLS],
                      'sessoes': len(sessoes), 'pessoasTotal': len(pessoas),
                      'periodo': [fmt(sessoes[0]['q']), fmt(sessoes[-1]['q'])], 'periodoDump': [fmt(min(todas)), fmt(max(todas))],
-                     'runsTotal': len(todos_runs), 'semanasPrograma': round(SEMANAS_PROG, 1), 'inicioRuns': fmt(INICIO), 'ultimoRun': fmt(todos_runs[-1]['q']) if todos_runs else None,
+                     'pratica': pratica(), 'runsTotal': len(todos_runs), 'semanasPrograma': round(SEMANAS_PROG, 1), 'inicioRuns': fmt(INICIO), 'ultimoRun': fmt(todos_runs[-1]['q']) if todos_runs else None,
                      'geral': geral, 'areas': areas, 'pessoas': pessoas, 'meses': meses, 'semAvaliacao': sem_aval}]}
 json.dump(out, open(OUT, 'w', encoding='utf-8'), ensure_ascii=False)
 print('sessões', len(sessoes), 'pessoas', len(pessoas), 'runs', len(todos_runs), 'período', out['empresas'][0]['periodo'])

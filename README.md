@@ -44,7 +44,7 @@ git commit -am "Atualiza dados até DD/MM" && git push         # a Cloudflare pu
 
 ## Regras do cálculo
 
-- **Sessões avaliadas:** conversas com nota e debriefing escrito pela IA, sem a equipe rhapsody e sem testes. Nota 0 com debriefing estruturado vale 58.
+- **Sessões avaliadas:** conversas com nota e debriefing escrito pela rhapsody, sem a equipe rhapsody e sem testes. Nota 0 com debriefing estruturado vale 58.
 - **Competências:** o debriefing é dividido em "pontos fortes" e "pontos de melhoria" (4 primeiras linhas de cada seção). Uma competência conta uma vez por sessão em cada lado quando uma palavra-chave dela aparece no início de uma palavra.
 - **Domínio** = fortes ÷ (fortes + melhorias), exibido com 3+ menções (2+ por corretor).
 - **Evolução:** 1ª metade × 2ª metade das sessões em ordem de data.
