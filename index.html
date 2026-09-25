@@ -535,6 +535,48 @@ button.card:hover, .person:hover, .exec-card:hover { box-shadow: var(--shadow-h)
   .hs-kpis b { font-size: 21px; }
   .hs-cta { padding: 24px 18px; }
 }
+.hs-sub { font-size: 16px; font-weight: 800; color: var(--text); margin-top: 6px; letter-spacing: -0.01em; }
+.hs-pipe { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; counter-reset: pp; }
+.hs-pipe li { counter-increment: pp; position: relative; border: 1px solid var(--border); border-radius: 12px; padding: 12px 10px 10px; background: var(--surface-2); display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: var(--text-2); line-height: 1.4; }
+.hs-pipe li::before { content: counter(pp); width: 22px; height: 22px; border-radius: 50%; background: var(--rh-grad); color: #fff; font-weight: 800; font-size: 12px; display: grid; place-items: center; }
+.hs-pipe li b { color: var(--text); font-size: 13px; }
+.hs-funil { display: flex; flex-direction: column; gap: 8px; }
+.hs-fl { display: grid; grid-template-columns: 110px minmax(0, 1fr) 48px; gap: 10px; align-items: center; font-size: 13.5px; }
+.hs-fl-t { font-weight: 600; color: var(--text-2); }
+.hs-fl-b { height: 14px; background: var(--surface-2); border-radius: 7px; overflow: hidden; }
+.hs-fl-b i { display: block; height: 100%; border-radius: 7px; background: linear-gradient(90deg, var(--accent-2), var(--accent)); }
+.hs-fl b { text-align: right; }
+.hs-fl.alvo .hs-fl-t, .hs-fl.alvo b { color: var(--rh-3, #ec4899); font-weight: 800; }
+.hs-fl.alvo .hs-fl-b i { background: linear-gradient(90deg, #8b5cf6, #ec4899); }
+.hs-desafio { border-radius: 16px; padding: 18px; background: linear-gradient(135deg, rgba(139,92,246,.10), rgba(236,72,153,.08)); border: 1px solid rgba(139,92,246,.28); display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 1.6; color: var(--text-2); }
+.hs-desafio.sec { background: var(--warn-soft); border-color: transparent; }
+.hs-desafio h3 { font-size: 19px; font-weight: 800; color: var(--text); letter-spacing: -0.01em; }
+.hs-desafio b { color: var(--text); }
+.hs-desafio-e { font-size: 11.5px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #8b5cf6; }
+.hs-desafio.sec .hs-desafio-e { color: var(--warn); }
+.hs-ataque { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.hs-at { border: 1px solid var(--border); border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 10px; background: var(--surface); }
+.hs-at-h { display: flex; gap: 10px; align-items: center; }
+.hs-at-h > div { display: flex; flex-direction: column; }
+.hs-at-n { flex: none; width: 30px; height: 30px; border-radius: 9px; background: var(--rh-grad); color: #fff; font-weight: 800; display: grid; place-items: center; }
+.hs-at-kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.hs-at-kpis > div { background: var(--surface-2); border-radius: 10px; padding: 8px 10px; display: flex; flex-direction: column; font-size: 11.5px; color: var(--text-3); line-height: 1.35; }
+.hs-at-kpis b { font-size: 20px; color: var(--text); }
+.hs-at-l { font-size: 13px; color: var(--text-2); line-height: 1.45; }
+.hs-at-l span { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--text-3); }
+.hs-foco { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.hs-foco > div, .hs-ri, .hs-plano > div { border: 1px solid var(--border); border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: var(--text-2); line-height: 1.5; }
+.hs-foco b, .hs-ri b, .hs-plano b { color: var(--text); font-size: 14.5px; }
+.hs-foco > div { border-left: 4px solid var(--accent); }
+.hs-rituais { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
+.hs-ri-i { font-size: 22px; }
+.hs-plano { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.hs-plano > div { background: var(--good-soft); border-color: transparent; }
+.hs-pl-m { font-size: 11.5px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: var(--good); }
+.hs-cta-p { font-size: 15px; line-height: 1.6; color: rgba(255,255,255,.85); max-width: 70ch; }
+.hs-cta-fim { font-size: 16px; font-weight: 700; color: #fff; border-top: 1px solid rgba(255,255,255,.16); padding-top: 14px; }
+@media (max-width: 900px) { .hs-pipe { grid-template-columns: repeat(2, minmax(0, 1fr)); } .hs-ataque, .hs-plano { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 600px) { .hs-pipe, .hs-foco { grid-template-columns: minmax(0, 1fr); } .hs-fl { grid-template-columns: 88px minmax(0, 1fr) 40px; } }
 @media print { .hs-hero, .hs-cta { -webkit-print-color-adjust: exact; print-color-adjust: exact; } .hs-cap { break-inside: avoid; } }
 .hs-origem { border: 1px solid var(--border); border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 10px; background: var(--surface-2); }
 .hs-origem-h { display: flex; flex-direction: column; gap: 2px; }
@@ -1179,29 +1221,105 @@ const DATA = {"gerado": "25/09/2026 19:04", "fonte": "dump-Metlife-25sept26-17h2
       <p class="hs-p">Competências que aparecem como ponto forte na maior parte das conversas avaliadas.</p>
       <div class="hs-fortes">${g.fortes.map(k => `<div class="hs-forte"><div class="hs-forte-v num">${g.dom[k].v}%</div><div class="hs-forte-t">${esc(sk(e, k).emoji)} ${esc(skN(k))}</div></div>`).join('')}</div>
     </div></section>`);
-    // 6 · Parceria (fatos do relatório de acompanhamento de 28/08/2026)
+    // 6 · Tecnologia e método
+    const nCen = [...new Set(ps.flatMap(p => Object.keys(p.cenarios || {})))].length;
     blocos.push(`<section class="hs-cap"><div class="hs-cap-n">06</div><div class="hs-cap-b">
-      <h2 class="hs-h">Uma parceria que responde rápido</h2>
+      <h2 class="hs-h">Como a rhapsody mede cada conversa</h2>
+      <p class="hs-p">Os números desta página não são opinião: saem de um processo automático e igual para todos os corretores, aplicado a cada simulação.</p>
+      <ol class="hs-pipe">
+        <li><b>Conversa por voz</b><span>em tempo real, com um cliente simulado em um dos ${nCen} cenários MetLife</span></li>
+        <li><b>Transcrição e métricas de voz</b><span>tempo de fala de cada lado em milissegundos e número de trocas</span></li>
+        <li><b>Avaliação por rubrica</b><span>12 competências da venda consultiva MetBook, nota de 0 a 100</span></li>
+        <li><b>Debriefing escrito</b><span>pontos fortes, pontos de melhoria e a técnica para a próxima conversa</span></li>
+        <li><b>Mapa de competências</b><span>consolida por corretor, equipe e fase da venda</span></li>
+      </ol>
       <div class="hs-grid3">
-        <div class="hs-fato"><div class="hs-fato-v">&lt; 24 h</div><div>para corrigir cada ajuste reportado pela MetLife no piloto. Um deles foi resolvido em menos de 6 horas.</div></div>
-        <div class="hs-fato"><div class="hs-fato-v">0</div><div>quebras de imersão: nenhum corretor saiu do personagem, sinal de que a simulação é vivida como treino real.</div></div>
-        <div class="hs-fato"><div class="hs-fato-v">90–96%</div><div>das simulações com perguntas abertas, base do método MetBook já instalada no time.</div></div>
+        <div class="hs-fato"><div class="hs-fato-v num">${ct ? ct.avaliadas.n : e.sessoes}</div><div><b>debriefings escritos</b>, um por conversa avaliada, com duração média de ${ct ? f1(ct.avaliadas.min) : f1(pr.minutosPorRun || 0)} min e ${f1(pr.turnosRec || 0)} trocas por conversa.</div></div>
+        <div class="hs-fato"><div class="hs-fato-v num">${f1(pr.falaRec || 0)}×</div><div><b>razão fala do corretor ÷ fala do cliente</b>, medida pelo áudio. Era ${f1(pr.falaIni || 0)}× no início: indicador objetivo de escuta, sem depender de autoavaliação.</div></div>
+        <div class="hs-fato"><div class="hs-fato-v num">12</div><div><b>competências por conversa</b>, cada uma classificada como ponto forte ou de melhoria. O domínio é a proporção de vezes em que ela aparece como ponto forte.</div></div>
+        <div class="hs-fato"><div class="hs-fato-v">&lt; 24 h</div><div><b>tempo de correção</b> de cada ajuste reportado pela MetLife durante o piloto. Um deles foi resolvido em menos de 6 horas.</div></div>
+        <div class="hs-fato"><div class="hs-fato-v">90–96%</div><div><b>das simulações com perguntas abertas</b> por parte do corretor, base do método MetBook já instalada no time.</div></div>
+        <div class="hs-fato"><div class="hs-fato-v num">${nCen}</div><div><b>cenários MetLife em uso</b>, construídos a partir dos bloqueios reais de campo e ajustados com a equipe durante o piloto.</div></div>
       </div>
-      <p class="hs-nota">Os cenários são construídos a partir dos bloqueios reais de campo: ${[...new Set(ps.flatMap(p => Object.keys(p.cenarios || {})))].length} cenários MetLife em uso hoje, e os próximos já estão desenhados a partir das conversas com a equipe.</p>
-      <p class="hs-fonte">Fonte dos três indicadores: relatório de acompanhamento do piloto de 28/08/2026 (128 simulações de julho e agosto).</p>
+      <p class="hs-fonte">Fontes: dados da plataforma rhapsody até ${esc(e.ultimoRun || e.periodo[1])}. Tempo de correção e perguntas abertas: relatório de acompanhamento do piloto de 28/08/2026 (128 simulações de julho e agosto).</p>
     </div></section>`);
-    // 7 · Próxima fase
-    const fase = FASES.map(f => ({ ...f, v: (() => { let S = 0, G = 0; f.sk.forEach(k => { S += g.dom[k].s; G += g.dom[k].g; }); return S + G >= 3 ? Math.round(S / (S + G) * 100) : null; })() }))
-      .filter(f => f.v != null).sort((a, b) => a.v - b.v)[0];
-    const evoFase = fase ? evo.find(v => fase.sk.includes(v.k)) : null;
-    blocos.push(`<section class="hs-cta">
-      <div class="hs-cta-e">Próxima fase</div>
-      <h2 class="hs-cta-h">O piloto provou o método. Agora é ganhar escala.</h2>
-      <div class="hs-grid3">
-        <div class="hs-passo"><b>Levar a toda a rede</b><span>${faltam > 0 ? `${faltam} corretores cadastrados ainda não começaram a treinar. ` : ''}Incluir os corretores novos desde o onboarding, onde a simulação gera mais valor.</span></div>
-        <div class="hs-passo"><b>${fase ? `Aprofundar ${esc(fase.nome.toLowerCase())}` : 'Aprofundar o método'}</b><span>${evoFase ? `${esc(skN(evoFase.k))} já subiu ${evoFase.delta} pontos no piloto. ` : ''}Uma trilha dedicada acelera a fase da venda com maior potencial de ganho.</span></div>
-        <div class="hs-passo"><b>Novos cenários de campo</b><span>Terceiro decisor na reunião, objeção de preço e reativação de clientes, desenhados a partir do que os corretores vivem.</span></div>
+
+    // 7 · Próxima fase: desafios e linha de ataque
+    const fases = FASES.map(f => { let S = 0, G = 0; f.sk.forEach(k => { S += g.dom[k].s; G += g.dom[k].g; }); return { ...f, S, G, v: S + G >= 3 ? Math.round(S / (S + G) * 100) : null }; }).filter(f => f.v != null);
+    const fase = fases.slice().sort((a, b) => a.v - b.v)[0];
+    const evoFase = fase ? (g.evoluiu || []).filter(v => v.tipo === 'dominio' && v.delta > 0 && fase.sk.includes(v.k)) : [];
+    const prios = (g.prios || []).slice(0, 3);
+    const mc = (e.meses || []).filter(m => m.corretores > 0);
+    const mPico = mc.slice().sort((a, b) => (b.runs - b.lideranca) - (a.runs - a.lideranca))[0], mUlt = mc[mc.length - 1];
+    const caiu = mPico && mUlt && mUlt !== mPico && mUlt.corretores < mPico.corretores;
+    const sabrina = lideres[0];
+    if (fase) blocos.push(`<section class="hs-cap"><div class="hs-cap-n">07</div><div class="hs-cap-b">
+      <h2 class="hs-h">Próxima fase: onde atacar</h2>
+      <p class="hs-p">O piloto também mostrou, com precisão, <b>onde está o maior ganho</b>. Medindo o domínio de cada fase da venda nas ${e.sessoes} conversas avaliadas, uma fase se destaca como a mais desafiadora para a rede:</p>
+      <div class="hs-funil">${fases.map(f => `<div class="hs-fl ${f.id === fase.id ? 'alvo' : ''}">
+        <span class="hs-fl-t">${esc(f.curto)}</span>
+        <span class="hs-fl-b"><i style="width:${Math.max(f.v, 3)}%"></i></span>
+        <b class="num">${f.v}%</b></div>`).join('')}</div>
+      <p class="small muted">Domínio por fase = vezes em que as competências da fase aparecem como ponto forte ÷ total de avaliações dessas competências.</p>
+      <div class="hs-desafio">
+        <div class="hs-desafio-e">Fase mais desafiadora</div>
+        <h3>${esc(fase.nome)}: ${fase.v}% de domínio</h3>
+        <p>Em ${fase.S + fase.G} avaliações das competências ${fase.sk.map(k => `<b>${esc(skN(k))}</b>`).join(' e ')}, <b>${fase.G}</b> vieram como ponto de melhoria. É o momento em que o cliente diz <i>“está caro”</i>, <i>“vou pensar”</i> ou <i>“preciso falar com meu marido”</i>, e em que a venda consultiva costuma ser perdida em campo.</p>
+        ${evoFase.length ? `<p>A boa notícia: é também onde o piloto já começou a virar o jogo. ${evoFase.map(v => `<b>${esc(skN(v.k))}</b> passou de ${v.ini}% para ${v.rec}% de domínio`).join(' e ')} entre as primeiras e as últimas sessões. O método funciona; falta volume de prática para consolidar.</p>` : ''}
+        <p>Por que é a fase mais difícil de treinar em campo: objeção real acontece poucas vezes por semana, sempre com um cliente de verdade na linha e sem espaço para errar. Na rhapsody o corretor pode ouvir a mesma objeção de preço dez vezes seguidas, testar respostas diferentes e receber o debriefing na hora.</p>
       </div>
+      ${prios.length ? `<h3 class="hs-sub">Linha de ataque: as 3 competências com mais pontos de melhoria nas sessões recentes</h3>
+      <div class="hs-ataque">${prios.map((p, i) => { const f = faseDe(p.k); return `<div class="hs-at">
+        <div class="hs-at-h"><span class="hs-at-n">${i + 1}</span><div><b>${esc(skN(p.k))}</b><span class="muted small">${f ? esc(f.nome) : ''}</span></div></div>
+        <div class="hs-at-kpis"><div><b class="num">${p.taxa}%</b><span>das conversas recentes pedem melhoria</span></div><div><b class="num">${p.dom}%</b><span>domínio atual</span></div></div>
+        <div class="hs-at-l"><span>Cenário de treino</span>${esc(p.cenario)}</div>
+        <div class="hs-at-l"><span>Técnica a fixar</span>${esc(p.acao)}</div>
+      </div>`; }).join('')}</div>` : ''}
+      <h3 class="hs-sub">O foco da próxima fase</h3>
+      <div class="hs-foco">
+        <div><b>Trilha dedicada de ${esc(fase.curto.toLowerCase())}</b><span>Sequência progressiva de cenários: objeção financeira, adiamento (“vou pensar”), terceiro decisor na reunião e reativação de clientes, do mais simples ao mais difícil.</span></div>
+        <div><b>Metas por competência</b><span>Cada corretor recebe no mapa a sua competência-foco e uma meta de domínio. Meta proposta para a rede: levar ${esc(fase.nome.toLowerCase())} de ${fase.v}% para 50% de domínio.</span></div>
+        <div><b>Debriefing orientado à técnica</b><span>Feedback centrado no “Sim, mas…”, no Bumerangue, na Recapitulação e no CLOSE, com a frase exata que faltou em cada conversa.</span></div>
+        <div><b>Relatório quinzenal para a liderança</b><span>Quem treinou, quanto evoluiu e em qual fase, pronto para usar em reuniões de equipe e 1:1.</span></div>
+      </div>
+      ${caiu ? `<div class="hs-desafio sec">
+        <div class="hs-desafio-e">Segundo desafio: transformar o piloto em rotina</div>
+        <p>O uso foi mais intenso em ${mesLongo(mPico.m)} (${mPico.runs - mPico.lideranca} simulações de ${mPico.corretores} corretores) e ficou concentrado em um grupo menor nos meses seguintes (${mUlt.corretores} corretores ativos em ${mesLongo(mUlt.m)}). ${mUlt.score && m0 && mUlt.score > m0.score ? `Quem manteve a rotina chegou a <b>nota média ${f1(mUlt.score)}</b> em ${mesLongo(mUlt.m)}, a maior do piloto. ` : ''}${faltam > 0 ? `E ${faltam} dos ${plan.length} corretores cadastrados ainda não começaram. ` : ''}O método já provou resultado; o que falta é o ritmo, e é aí que a liderança MetLife faz a diferença.</p>
+      </div>` : ''}
+    </div></section>`);
+
+    // 8 · Liderança
+    blocos.push(`<section class="hs-cap"><div class="hs-cap-n">08</div><div class="hs-cap-b">
+      <h2 class="hs-h">Como a liderança MetLife pode impulsionar o uso</h2>
+      <p class="hs-p">Ferramenta de treino não se sustenta sozinha: o corretor treina quando percebe que o líder acompanha, reconhece e usa o resultado. ${sabrina && sabrina.runs ? `A própria liderança já mostrou o caminho: <b>${esc(sabrina.nome)}</b> fez ${sabrina.runs} simulações no piloto. ` : ''}Sete rituais simples, que cabem na rotina que as equipes já têm:</p>
+      <div class="hs-rituais">
+        <div class="hs-ri"><span class="hs-ri-i">🎯</span><b>Meta semanal clara</b><span>2 simulações por semana por corretor, com 1 delas na fase-foco (${esc(fase ? fase.curto.toLowerCase() : 'objeções')}). Pouco tempo: cerca de 10 minutos por semana.</span></div>
+        <div class="hs-ri"><span class="hs-ri-i">🗓️</span><b>15 minutos na reunião de equipe</b><span>Abrir o mapa de competências, mostrar a evolução da semana e escolher juntos o cenário da próxima.</span></div>
+        <div class="hs-ri"><span class="hs-ri-i">🎙️</span><b>Líder treina ao vivo</b><span>Uma vez por mês, o líder faz uma simulação na frente do time e comenta o próprio debriefing. Tira o medo de errar.</span></div>
+        <div class="hs-ri"><span class="hs-ri-i">🏆</span><b>Reconhecer quem evolui</b><span>Destaque mensal para quem mais subiu a nota, não para quem mais treinou. Premia o aprendizado, não o volume.</span></div>
+        <div class="hs-ri"><span class="hs-ri-i">⚔️</span><b>Desafio do mês por cenário</b><span>Toda a rede treina o mesmo cenário, por exemplo “objeção de preço”, e compara a evolução entre equipes.</span></div>
+        <div class="hs-ri"><span class="hs-ri-i">💬</span><b>Resumo executivo no 1:1</b><span>O líder usa o resumo individual do mapa (pontos fortes, o que evoluiu, fase a melhorar) como pauta da conversa com cada corretor.</span></div>
+        <div class="hs-ri"><span class="hs-ri-i">🚀</span><b>Simulação no onboarding</b><span>Todo corretor novo começa com 5 simulações de prospecção antes da primeira ligação real.</span></div>
+      </div>
+      <h3 class="hs-sub">Plano de 90 dias</h3>
+      <div class="hs-plano">
+        <div><span class="hs-pl-m">Mês 1</span><b>Relançamento</b><span>Comunicado da liderança, ${faltam > 0 ? `ativação dos ${faltam} corretores que ainda não treinaram` : 'ativação de toda a rede'} e início da trilha de ${esc(fase ? fase.curto.toLowerCase() : 'objeções')}.</span></div>
+        <div><span class="hs-pl-m">Mês 2</span><b>Rotina</b><span>Meta semanal ativa, 15 minutos na reunião de equipe e primeiro desafio do mês.</span></div>
+        <div><span class="hs-pl-m">Mês 3</span><b>Resultado</b><span>Reconhecimento dos que mais evoluíram e nova leitura do mapa: domínio por fase antes e depois.</span></div>
+      </div>
+    </div></section>`);
+
+    // CTA
+    blocos.push(`<section class="hs-cta">
+      <div class="hs-cta-e">Proposta</div>
+      <h2 class="hs-cta-h">O piloto provou o método. Agora é ganhar escala.</h2>
+      <p class="hs-cta-p">Em ${semanas} semanas, a rhapsody mostrou que muda o jeito de vender: o corretor fala menos, ouve mais e já começou a virar a fase mais difícil da venda. A próxima fase leva isso para toda a rede, com foco em ${esc(fase ? fase.nome.toLowerCase() : 'objeções')} e a liderança MetLife no comando do ritmo.</p>
+      <div class="hs-grid3">
+        <div class="hs-passo"><b>Toda a rede treinando</b><span>${faltam > 0 ? `${faltam} corretores cadastrados ainda por ativar, ` : ''}mais os corretores novos desde o onboarding, onde a simulação gera mais valor.</span></div>
+        <div class="hs-passo"><b>${esc(fase ? fase.curto : 'Objeções')} como prioridade</b><span>Trilha dedicada, metas por competência e debriefing focado na técnica MetBook.</span></div>
+        <div class="hs-passo"><b>Liderança com visibilidade</b><span>Mapa de competências atualizado e relatório quinzenal para conduzir rituais, reconhecimento e 1:1.</span></div>
+      </div>
+      <p class="hs-cta-fim">Cada objeção treinada na rhapsody é uma objeção que o corretor não ouve pela primeira vez na frente do cliente.</p>
     </section>`);
 
     return `<div class="hs">
