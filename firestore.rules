@@ -1,0 +1,41 @@
+rules_version = '2';
+// Regras do Firestore para o Mapa de Competências MetLife.
+// Cole em: Firebase Console → Firestore Database → Regras → Publicar.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function logado() { return request.auth != null; }
+    function confirmado() { return logado() && request.auth.token.email_verified == true; }
+    function meuEmail() { return request.auth.token.email.lower(); }
+    function admin() { return confirmado() && meuEmail() == 'taba.dias@rhapsody.run'; }
+    function autorizado() {
+      return confirmado()
+        && exists(/databases/$(database)/documents/acesso/$(meuEmail()))
+        && get(/databases/$(database)/documents/acesso/$(meuEmail())).data.status == 'autorizado';
+    }
+
+    // Pedidos e autorizações. O id do documento é o e-mail em minúsculas.
+    match /acesso/{email} {
+      // qualquer pessoa pode CRIAR um pedido (não pode sobrescrever nem se autorizar)
+      allow create: if request.resource.data.status == 'pendente'
+        && request.resource.data.keys().hasOnly(['nome', 'email', 'empresa', 'motivo', 'status', 'pedidoEm'])
+        && request.resource.data.email == email
+        && email.matches('^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$')
+        && request.resource.data.nome is string && request.resource.data.nome.size() >= 3 && request.resource.data.nome.size() <= 100
+        && request.resource.data.empresa is string && request.resource.data.empresa.size() <= 120
+        && request.resource.data.motivo is string && request.resource.data.motivo.size() <= 300
+        && request.resource.data.pedidoEm == request.time
+        || admin();
+      // cada pessoa vê só o próprio pedido; o administrador vê todos
+      allow get: if admin() || (logado() && meuEmail() == email);
+      allow list: if admin();
+      allow update, delete: if admin();
+    }
+
+    // Dados do mapa: só e-mails confirmados E autorizados leem; só o administrador escreve.
+    match /dados/{doc} {
+      allow read: if admin() || autorizado();
+      allow write: if admin();
+    }
+  }
+}

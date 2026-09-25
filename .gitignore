@@ -1,4 +1,4 @@
-# Dados pessoais e brutos da plataforma: não versionar
+# Dados brutos da plataforma e planilha de usuários: não versionar
 *.json
 *.xlsx
 *.xls

@@ -1456,19 +1456,13 @@ const DATA = {"gerado": "25/09/2026 18:20", "fonte": "dump-Metlife-25sept26-17h2
     </section>
 
     <section class="block">
-      <div class="grid g2">
+      <div class="grid">
         <div class="card pad"><div class="lbl">Sinais para ficar atento</div><ul class="g-list">
           <li><b>Nota subindo e competência caindo</b>: o time pode estar acertando o resultado da conversa sem o método. Vale olhar as citações.</li>
           <li><b>Competência com domínio alto e pouca evidência</b>: “100%” com 3 menções vale menos do que 70% com 40. Passe o mouse na barra para ver as contagens.</li>
           <li><b>Mesma falha em muitas pessoas</b>: é conteúdo ou cenário, não indivíduo. Treine o grupo.</li>
           <li><b>Falha concentrada em 1 ou 2 pessoas</b>: acompanhamento individual resolve mais rápido.</li>
           <li><b>Pessoa com 1 ou 2 sessões</b>: ainda não há padrão. Incentive mais simulações antes de concluir qualquer coisa.</li>
-        </ul></div>
-        <div class="card pad"><div class="lbl">Limites da leitura</div><ul class="g-list">
-          <li>As competências vêm de uma <b>leitura automática do texto</b> dos feedbacks por palavras-chave. Há acertos e alguns falsos positivos (por exemplo, “por padrão” conta como Padrões de Luxo).</li>
-          <li>Serve para <b>orientar prioridades</b> de treino, não como avaliação formal de desempenho de uma pessoa.</li>
-          ${UNICA ? '' : '<li>Fairmont e MetLife têm <b>matrizes diferentes</b> (hotelaria de luxo × venda consultiva). Compare as empresas por nota e evolução, nunca competência com competência.</li>'}
-          <li>Com poucas sessões no período, qualquer variação fica exagerada. Olhe sempre o “n” (número de sessões) ao lado.</li>
         </ul></div>
       </div>
     </section>
@@ -1492,7 +1486,6 @@ const DATA = {"gerado": "25/09/2026 18:20", "fonte": "dump-Metlife-25sept26-17h2
       <p><b>Ponto forte × ponto de melhoria:</b> o debriefing de cada sessão é dividido nas seções “pontos fortes” e “pontos de melhoria”. Uma competência conta uma vez por sessão em cada lado quando alguma palavra-chave dela aparece no início de uma palavra daquela seção.</p>
       <p><b>Domínio</b> = sessões em que a competência foi ponto forte ÷ (sessões em que foi ponto forte + sessões em que foi ponto de melhoria). Só é exibido com pelo menos 3 menções (2 para pessoas).</p>
       <p><b>Evolução</b> compara a primeira e a segunda metade das sessões em ordem de data. Na <b>nota</b>, a evolução é percentual sobre a média inicial (de 30 para 60 = +100%); no <b>domínio das competências</b>, é em pontos (de 30% para 60% = +30). A <b>linha de ataque</b> ordena as competências pela frequência com que aparecem como ponto de melhoria na metade mais recente.</p>
-      <p class="muted">É uma leitura automática de texto: serve para orientar prioridades, não como avaliação individual formal.</p>
     </div></details>`;
   }
 
