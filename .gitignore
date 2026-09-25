@@ -1,0 +1,6 @@
+# Dados pessoais e brutos da plataforma: não versionar
+*.json
+*.xlsx
+*.xls
+dump-*
+__pycache__/
