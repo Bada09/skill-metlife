@@ -577,6 +577,132 @@ button.card:hover, .person:hover, .exec-card:hover { box-shadow: var(--shadow-h)
 .hs-cta-fim { font-size: 16px; font-weight: 700; color: #fff; border-top: 1px solid rgba(255,255,255,.16); padding-top: 14px; }
 @media (max-width: 900px) { .hs-pipe { grid-template-columns: repeat(2, minmax(0, 1fr)); } .hs-ataque, .hs-plano { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 600px) { .hs-pipe, .hs-foco { grid-template-columns: minmax(0, 1fr); } .hs-fl { grid-template-columns: 88px minmax(0, 1fr) 40px; } }
+.hs-niveis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.hs-nv { border: 1px solid var(--border); border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 6px; background: var(--surface); position: relative; overflow: hidden; }
+.hs-nv::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: var(--rh-grad); }
+.hs-nv-e { font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.hs-nv > b { font-size: 15px; color: var(--text); }
+.hs-nv ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: var(--text-2); line-height: 1.5; }
+.hs-nv li b { color: var(--text); }
+.hs-ex { font: inherit; color: var(--text); text-align: left; cursor: pointer; border: 1px solid var(--border); border-radius: 16px; padding: 16px; background: linear-gradient(135deg, var(--accent-soft), transparent 70%); display: flex; flex-direction: column; gap: 12px; }
+.hs-ex:hover { border-color: var(--accent); box-shadow: var(--shadow-h); }
+.hs-ex-h { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; }
+.hs-ex-h b { font-size: 16px; }
+.hs-ex-g { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.hs-ex-g > div { background: var(--surface); border-radius: 12px; padding: 10px 12px; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.hs-ex-g span { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--text-3); }
+.hs-ex-g b { font-size: 14.5px; }
+.hs-ex-g em { align-self: flex-start; font-style: normal; font-size: 12.5px; color: var(--text-2); }
+.hs-ex-cta { font-size: 13px; font-weight: 700; color: var(--accent); }
+.hs-sinais { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.hs-si { border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: var(--text-2); line-height: 1.45; border-left: 4px solid var(--border); background: var(--surface-2); }
+.hs-si b { color: var(--text); font-size: 14.5px; }
+.hs-si.ok { border-left-color: var(--good); } .hs-si.at { border-left-color: #8b5cf6; } .hs-si.wa { border-left-color: var(--warn); } .hs-si.nt { border-left-color: var(--text-3); }
+.hs-nms { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
+.hs-nm { font: inherit; font-size: 12.5px; font-weight: 600; padding: 3px 10px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--text); cursor: pointer; }
+.hs-nm:hover { border-color: var(--accent); color: var(--accent); }
+.hs-ganhos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.hs-ganhos > div { border: 1px solid var(--border); border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: var(--text-2); line-height: 1.5; }
+.hs-ganhos b { color: var(--text); font-size: 14.5px; }
+.hs-quote { font-size: 17px; font-weight: 700; color: var(--text); border-left: 4px solid var(--accent); padding: 4px 0 4px 14px; text-wrap: balance; }
+@media (max-width: 900px) { .hs-niveis, .hs-ganhos { grid-template-columns: minmax(0, 1fr); } .hs-ex-g { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .hs-sinais { grid-template-columns: minmax(0, 1fr); } }
+.pv-res { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.pv-chip { font-size: 12.5px; padding: 4px 10px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--border); color: var(--text-2); }
+.pv-chip b { color: var(--text); }
+.pv { display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; margin-bottom: 10px; }
+.pv-row { display: grid; grid-template-columns: minmax(130px, 1fr) minmax(300px, 2.2fr) minmax(170px, 1.4fr) minmax(220px, 1.8fr); gap: 12px; padding: 12px 14px; border-top: 1px solid var(--border); align-items: center; font-size: 13px; }
+.pv-row:first-child { border-top: 0; }
+.pv-head { background: var(--surface-2); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--text-3); padding: 9px 14px; }
+.pv-head .pv-fs span { font-size: 10px; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pv-fs { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 4px; }
+.pv-c { border-radius: 8px; padding: 7px 2px; text-align: center; font-weight: 700; font-size: 12.5px; background: var(--surface-2); color: var(--text-3); font-variant-numeric: tabular-nums; }
+.pv-c em { display: none; font-style: normal; }
+.pv-c.alvo { outline: 3px solid #ec4899; outline-offset: 1px; }
+.pv-nm { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.pv-nm span, .pv-onde span, .pv-sol span { font-size: 12px; color: var(--text-3); line-height: 1.4; }
+.pv-link { font: inherit; font-weight: 700; font-size: 14px; color: var(--text); background: none; border: 0; padding: 0; text-align: left; cursor: pointer; }
+.pv-link:hover { color: var(--accent); }
+.pv-onde, .pv-sol { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.pv-onde b { color: #db2777; font-size: 13.5px; }
+.pv-sol b { color: var(--text); }
+.pv-sol span { color: var(--text-2); }
+.pv-sol .pv-cen { color: var(--accent-2); font-weight: 600; }
+.pv-onde .pv-also { color: var(--warn); font-weight: 600; }
+.hs-pv { background: var(--surface); }
+.cam { margin-top: 12px; border: 1px solid rgba(236,72,153,.3); border-radius: 14px; padding: 14px; background: linear-gradient(135deg, rgba(139,92,246,.07), rgba(236,72,153,.06)); display: flex; flex-direction: column; gap: 10px; }
+.cam-h { display: flex; flex-direction: column; gap: 3px; font-size: 13px; color: var(--text-2); }
+.cam-h b { font-size: 16px; color: var(--text); }
+.cam-e { font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #db2777; }
+.cam-p { margin: 0; padding: 0; list-style: none; counter-reset: cp; display: flex; flex-direction: column; gap: 8px; }
+.cam-p li { counter-increment: cp; display: grid; grid-template-columns: 26px minmax(0, 1fr); column-gap: 10px; font-size: 13px; color: var(--text-2); line-height: 1.45; }
+.cam-p li::before { content: counter(cp); grid-row: span 2; width: 24px; height: 24px; border-radius: 50%; background: var(--rh-grad); color: #fff; font-weight: 800; font-size: 12px; display: grid; place-items: center; }
+.cam-p li b { color: var(--text); }
+.cam-ex { font-size: 13px; font-style: italic; color: var(--text-2); background: var(--surface); border-radius: 10px; padding: 10px 12px; line-height: 1.5; }
+.cam-ex span { display: block; font-style: normal; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--text-3); margin-bottom: 3px; }
+@media (max-width: 1000px) {
+  .pv-head { display: none; }
+  .pv-row { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .pv-c em { display: block; font-size: 9.5px; font-weight: 600; opacity: .85; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+}
+@media (max-width: 480px) { .pv-fs { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media print { .pv-row { break-inside: avoid; } }
+.to-curva { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; height: 180px; align-items: end; padding: 10px 6px 0; background: var(--surface-2); border-radius: 14px; }
+.to-c { height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: stretch; gap: 6px; padding-bottom: 8px; }
+.to-c-b { background: linear-gradient(180deg, var(--accent), var(--accent-2)); border-radius: 8px 8px 3px 3px; display: flex; justify-content: center; align-items: flex-start; padding-top: 6px; min-height: 26px; }
+.to-c:nth-child(3) .to-c-b { background: linear-gradient(180deg, #ec4899, #8b5cf6); }
+.to-c-b b { color: #fff; font-size: 15px; }
+.to-c-r { text-align: center; font-size: 12px; font-weight: 600; color: var(--text-2); }
+.to-cadeia { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.to-cadeia > div { position: relative; border-radius: 12px; padding: 12px; background: var(--surface-2); display: flex; flex-direction: column; gap: 3px; font-size: 12.5px; color: var(--text-2); line-height: 1.4; }
+.to-cadeia > div b { color: var(--text); font-size: 14px; }
+.to-cadeia > div:not(:last-child)::after { content: "→"; position: absolute; right: -9px; top: 50%; transform: translateY(-50%); font-weight: 800; color: var(--text-3); z-index: 1; }
+.to-cadeia .fim { background: var(--bad-soft); } .to-cadeia .fim b { color: var(--bad); }
+.to-met { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; }
+.to-met > div { border: 1px solid var(--border); border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 5px; font-size: 13px; color: var(--text-2); line-height: 1.5; }
+.to-met b { color: var(--text); font-size: 14.5px; }
+.to-met i { font-style: normal; font-weight: 700; color: var(--accent-2); }
+.to-met-t { font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #8b5cf6; }
+.to-ciclo { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; counter-reset: tc; }
+.to-ciclo li { counter-increment: tc; border-radius: 12px; padding: 12px; background: linear-gradient(135deg, var(--accent-soft), transparent); border: 1px solid var(--border); display: flex; flex-direction: column; gap: 3px; font-size: 12.5px; color: var(--text-2); line-height: 1.4; }
+.to-ciclo li::before { content: counter(tc); width: 24px; height: 24px; border-radius: 50%; background: var(--rh-grad); color: #fff; font-weight: 800; font-size: 12px; display: grid; place-items: center; margin-bottom: 4px; }
+.to-ciclo li:last-child::after { content: "↺ volta ao 1"; font-size: 11px; font-weight: 700; color: var(--accent); margin-top: 2px; }
+.to-ciclo b { color: var(--text); font-size: 14px; }
+.to-quotes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.to-quotes blockquote { margin: 0; border-left: 4px solid var(--accent); background: var(--surface-2); border-radius: 0 12px 12px 0; padding: 12px 14px; font-size: 14px; line-height: 1.55; color: var(--text-2); }
+.to-quotes b { color: var(--text); }
+.to-quotes cite { display: block; font-style: normal; font-size: 12px; color: var(--text-3); margin-top: 6px; }
+.to-calc { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; border: 1px solid var(--border); border-radius: 16px; padding: 14px; background: var(--surface-2); }
+.to-calc label { display: flex; flex-direction: column; gap: 4px; font-size: 12px; font-weight: 700; color: var(--text-2); }
+.to-calc input { border: 1px solid var(--border); background: var(--surface); color: var(--text); border-radius: 10px; padding: 9px 10px; font: inherit; font-size: 15px; font-weight: 700; width: 100%; }
+.to-calc input:focus { outline: 2px solid var(--accent-soft); border-color: var(--accent); }
+.to-out { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.to-out > div { background: var(--good-soft); border-radius: 12px; padding: 12px 14px; display: flex; flex-direction: column; gap: 2px; }
+.to-out b { font-size: 26px; font-weight: 800; color: var(--good); letter-spacing: -0.02em; }
+.to-out span { font-size: 12.5px; color: var(--text-2); }
+@media (max-width: 900px) { .to-cadeia, .to-ciclo { grid-template-columns: repeat(2, minmax(0, 1fr)); } .to-cadeia > div::after { display: none; } .to-quotes, .to-calc { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .to-quotes, .to-out { grid-template-columns: minmax(0, 1fr); } .to-calc { grid-template-columns: minmax(0, 1fr); } .to-curva { height: 150px; gap: 6px; } }
+.vz-kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.vz-kpis > div { border-radius: 14px; padding: 12px 14px; background: var(--good-soft); display: flex; flex-direction: column; gap: 2px; }
+.vz-kpis b { font-size: 26px; font-weight: 800; color: var(--good); letter-spacing: -0.02em; }
+.vz-kpis span { font-size: 12.5px; color: var(--text-2); line-height: 1.35; }
+.vz-dest { margin: 0; border-radius: 18px; padding: 22px 24px; background: linear-gradient(135deg, #041e42, #0b2f63); color: #fff; position: relative; overflow: hidden; }
+.vz-dest::before { content: "“"; position: absolute; right: 18px; top: -30px; font-size: 160px; font-weight: 800; line-height: 1; opacity: .12; }
+.vz-dest blockquote { margin: 0; font-size: clamp(17px, 2.2vw, 22px); font-weight: 700; line-height: 1.45; color: #fff; text-wrap: pretty; }
+.vz-dest figcaption { margin-top: 12px; font-size: 13px; color: rgba(255,255,255,.75); display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.vz-dest figcaption b { color: #fff; }
+.vz-dest .vz-tag { background: rgba(255,255,255,.14); color: #fff; }
+.vz-grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+@media (max-width: 800px) { .vz-grid3 { grid-template-columns: minmax(0, 1fr); } }
+.vz-q { break-inside: avoid; margin: 0; border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 0 14px 14px 0; padding: 14px; background: var(--surface); }
+.vz-q blockquote { margin: 0; font-size: 14.5px; line-height: 1.55; color: var(--text); }
+.vz-q figcaption { margin-top: 8px; font-size: 12px; color: var(--text-3); display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.vz-q figcaption b { color: var(--text-2); }
+.vz-tag { font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent-2); }
+@media (max-width: 700px) { .vz-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.hs-titulo-xl { font-size: clamp(32px, 5vw, 58px); max-width: 24ch; line-height: 1.04; }
+.hs-lead-forte { font-size: clamp(16px, 1.8vw, 19px); color: #fff; margin-bottom: 8px; }
+.hs-lead-forte b { color: #a4ce4e; }
 @media print { .hs-hero, .hs-cta { -webkit-print-color-adjust: exact; print-color-adjust: exact; } .hs-cap { break-inside: avoid; } }
 .hs-origem { border: 1px solid var(--border); border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 10px; background: var(--surface-2); }
 .hs-origem-h { display: flex; flex-direction: column; gap: 2px; }
@@ -818,12 +944,12 @@ const DATA = {"gerado": "25/09/2026 19:04", "fonte": "dump-Metlife-25sept26-17h2
 
   // ── Fases da venda consultiva MetLife: cada competência pertence a uma etapa do funil ──
   const FASES = [
-    { id: 'prosp', nome: 'Prospecção e abertura', curto: 'Prospecção', sk: ['roteiro', 'assertividade', 'personalizacao'], dica: 'abrir a ligação com energia, seguir o roteiro de 8 etapas e trocar o "me manda um material" por uma reunião' },
-    { id: 'diag', nome: 'Diagnóstico e qualificação', curto: 'Diagnóstico', sk: ['escuta', 'qualificacao'], dica: 'ouvir antes de responder e descobrir, no primeiro minuto, a real necessidade e o tipo de objeção' },
-    { id: 'arg', nome: 'Argumentação consultiva', curto: 'Argumentação', sk: ['consultiva', 'sensibilizacao', 'reconexao'], dica: 'recomendar como consultor, tratar temas sensíveis com tato e reconectar o cliente ao motivo de se proteger' },
-    { id: 'obj', nome: 'Tratamento de objeções', curto: 'Objeções', sk: ['objeccoes', 'neutralizacao'], dica: 'acolher com "Sim, mas…" e neutralizar o "vou pensar" com a sequência Bumerangue · Recapitulação · CLOSE' },
-    { id: 'fech', nome: 'Fechamento', curto: 'Fechamento', sk: ['fechamento'], dica: 'travar o próximo passo com eleição forçada: duas opções de horário, nunca "quando puder"' },
-    { id: 'pos', nome: 'Pós-venda e indicações', curto: 'Indicações', sk: ['indicacoes'], dica: 'aproveitar o momento UAU para pedir indicações de forma natural' }
+    { id: 'prosp', nome: 'Prospecção e abertura', curto: 'Prospecção', sk: ['roteiro', 'assertividade', 'personalizacao'], perde: 'o cliente não aceita a reunião ou encerra com “me manda um material”', dica: 'abrir a ligação com energia, seguir o roteiro de 8 etapas e trocar o "me manda um material" por uma reunião' },
+    { id: 'diag', nome: 'Diagnóstico e qualificação', curto: 'Diagnóstico', sk: ['escuta', 'qualificacao'], perde: 'o corretor apresenta o produto antes de entender a necessidade, e a objeção real fica escondida', dica: 'ouvir antes de responder e descobrir, no primeiro minuto, a real necessidade e o tipo de objeção' },
+    { id: 'arg', nome: 'Argumentação consultiva', curto: 'Argumentação', sk: ['consultiva', 'sensibilizacao', 'reconexao'], perde: 'a recomendação soa como produto e não como solução para a vida do cliente', dica: 'recomendar como consultor, tratar temas sensíveis com tato e reconectar o cliente ao motivo de se proteger' },
+    { id: 'obj', nome: 'Tratamento de objeções', curto: 'Objeções', sk: ['objeccoes', 'neutralizacao'], perde: 'o cliente diz “está caro” ou “vou pensar” e a conversa termina sem avanço', dica: 'acolher com "Sim, mas…" e neutralizar o "vou pensar" com a sequência Bumerangue · Recapitulação · CLOSE' },
+    { id: 'fech', nome: 'Fechamento', curto: 'Fechamento', sk: ['fechamento'], perde: 'a conversa acaba sem data marcada, no “me liga depois”', dica: 'travar o próximo passo com eleição forçada: duas opções de horário, nunca "quando puder"' },
+    { id: 'pos', nome: 'Pós-venda e indicações', curto: 'Indicações', sk: ['indicacoes'], perde: 'a venda fecha, mas o corretor não pede indicações e perde a próxima venda', dica: 'aproveitar o momento UAU para pedir indicações de forma natural' }
   ];
   const faseDe = k => FASES.find(f => f.sk.includes(k));
   // Domínio por fase = soma dos pontos fortes ÷ (fortes + melhorias) das competências da fase
@@ -850,6 +976,72 @@ const DATA = {"gerado": "25/09/2026 19:04", "fonte": "dump-Metlife-25sept26-17h2
         <span class="fz-bar"><i style="width:${f.v == null ? 0 : Math.max(f.v, 3)}%;background:${c ? c.bg : 'transparent'}"></i></span>
         <span class="fz-v num">${f.v == null ? '—' : f.v + '%'}</span></div>`;
     }).join('')}</div>`;
+  }
+
+  // Caminho para a solução: onde o corretor perde a venda e o que fazer
+  const r5 = n => Math.round(n / 5) * 5;
+  function caminho(e, p) {
+    if (!p || p.n < 3) return null;
+    const fc = faseCritica(p); if (!fc) return null;
+    const f = fc.fase;
+    const pr = (p.prios || []).find(x => f.sk.includes(x.k)) || null;
+    const kFoco = pr ? pr.k : f.sk.slice().sort((a, b) => ((p.dom[a] || {}).v ?? 101) - ((p.dom[b] || {}).v ?? 101))[0];
+    const dFoco = (p.dom || {})[kFoco] || {};
+    const meta = f.v != null ? Math.min(90, r5(Math.max(f.v + 20, 50))) : 60;
+    const gp = (e.geral.prios || []).find(x => f.sk.includes(x.k));
+    const todos = [...new Set(e.pessoas.flatMap(x => Object.keys(x.cenarios || {})))];
+    const pref = { prosp: ['Prospecção'], diag: [], arg: ['Argumentação'], obj: kFoco === 'neutralizacao' ? ['adiamento', 'Objeção'] : ['financeira', 'Objeção'], fech: ['adiamento', 'Argumentação'], pos: ['Fidelização'] }[f.id] || [];
+    const casa = c => c && (!pref.length || pref.some(w => c.includes(w)));
+    let cen = (pr && casa(pr.cenario) && pr.cenario) || (gp && casa(gp.cenario) && gp.cenario) || null;
+    if (!cen) for (const w of pref) { cen = todos.find(c => c.includes(w)); if (cen) break; }
+    if (!cen) cen = (pr && pr.cenario) || (gp && gp.cenario) || null;
+    const also = fasesDe(p).filter(x => x.id !== f.id && x.v != null && x.v < 35 && (x.s + x.g) >= 3).sort((a, b) => a.v - b.v)[0] || null;
+    const acao = (pr && pr.acao) || (gp && gp.k === kFoco && gp.acao) || f.dica;
+    const ex = pr && pr.exemplos && pr.exemplos[0] ? pr.exemplos[0] : null;
+    const forteOutro = (p.fortes || []).filter(k => !f.sk.includes(k)).map(k => sk(e, k).nome)[0] || null;
+    return { f, fc, pr, kFoco, dFoco, meta, cen, acao, ex, forteOutro, also };
+  }
+  function caminhoHTML(e, p) {
+    const c = caminho(e, p); if (!c) return '';
+    return `<div class="cam">
+      <div class="cam-h"><span class="cam-e">Onde perde a venda</span><b>${FASES.findIndex(f => f.id === c.f.id) + 1}. ${esc(c.f.nome)}${c.f.v != null ? ` · ${c.f.v}% de domínio` : ''}</b>
+        <span>Na prática: ${esc(c.f.perde)}.</span>${c.also ? `<span>Atenção também a <b>${esc(c.also.nome.toLowerCase())}</b> (${c.also.v}% de domínio), próximo passo depois desta fase.</span>` : ''}</div>
+      <ol class="cam-p">
+        <li><b>Competência-foco</b><span>${esc(sk(e, c.kFoco).nome)}${c.pr ? ` · ponto de melhoria em ${c.pr.taxa}% das sessões recentes` : c.dFoco.v != null ? ` · domínio ${c.dFoco.v}%` : ''}</span></li>
+        <li><b>Técnica a fixar</b><span>${esc(c.acao)}</span></li>
+        ${c.cen ? `<li><b>Onde treinar</b><span>Cenário <b>${esc(c.cen)}</b>: 3 simulações nas próximas 2 semanas, lendo o debriefing entre uma e outra.</span></li>` : ''}
+        <li><b>Meta</b><span>Levar ${esc(c.f.curto.toLowerCase())} de ${c.f.v != null ? c.f.v + '%' : 'pouca evidência'} para ${c.meta}% de domínio na próxima leitura do mapa.</span></li>
+        ${c.forteOutro ? `<li><b>Apoio</b><span>Usar o ponto forte em ${esc(c.forteOutro)} como alavanca na fase de ${esc(c.f.curto.toLowerCase())}.</span></li>` : ''}
+      </ol>
+      ${c.ex ? `<div class="cam-ex"><span>O que faltou, segundo o debriefing</span>“${esc(c.ex)}”</div>` : ''}
+    </div>`;
+  }
+  function perdaTabela(e, lista, opts = {}) {
+    const com = lista.filter(p => p.n >= 3).map(p => ({ p, c: caminho(e, p) })).filter(x => x.c)
+      .sort((a, b) => FASES.findIndex(f => f.id === a.c.f.id) - FASES.findIndex(f => f.id === b.c.f.id) || b.p.n - a.p.n);
+    const sem = lista.filter(p => p.n < 3);
+    if (!com.length) return '<div class="muted small">Nenhum corretor com 3 ou mais sessões avaliadas neste filtro.</div>';
+    const cont = FASES.map(f => ({ f, q: com.filter(x => x.c.f.id === f.id).length })).filter(x => x.q);
+    return `<div class="pv-res">${cont.map(x => `<span class="pv-chip"><b class="num">${x.q}</b> perde${x.q > 1 ? 'm' : ''} em ${esc(x.f.curto.toLowerCase())}</span>`).join('')}</div>
+      <div class="pv">
+        <div class="pv-row pv-head"><div>Corretor</div><div class="pv-fs">${FASES.map((f, i) => `<span title="${esc(f.nome)}">${i + 1}. ${esc(f.curto)}</span>`).join('')}</div><div>Onde perde a venda</div><div>Caminho para a solução</div></div>
+        ${com.map(({ p, c }) => { const fs = fasesDe(p); return `<div class="pv-row">
+          <div class="pv-nm"><button type="button" class="pv-link" data-person="${esc(p.nome)}">${esc(p.nome)}</button><span>${esc([p.equipe, p.cidade].filter(Boolean).join(' · '))} · ${p.n} sessões</span></div>
+          <div class="pv-fs">${fs.map((f, i) => { const h = heatBg(f.v), alvo = f.id === c.f.id;
+            return `<span class="pv-c ${alvo ? 'alvo' : ''} ${f.v == null ? 'na' : ''}" style="${h ? `background:${h.bg};color:${h.fg}` : ''}" title="${esc(`${f.nome}: ${f.v == null ? 'pouca evidência' : f.v + '% de domínio'}`)}"><em>${i + 1}. ${esc(f.curto)}</em>${f.v == null ? '—' : f.v + '%'}</span>`; }).join('')}</div>
+          <div class="pv-onde"><b>${esc(c.f.nome)}</b><span>${esc(c.f.perde)}</span>${c.also ? `<span class="pv-also">Atenção também: ${esc(c.also.curto.toLowerCase())} (${c.also.v}%)</span>` : ''}</div>
+          <div class="pv-sol"><b>${esc(sk(e, c.kFoco).nome)}</b><span>${esc(c.acao)}</span>${c.cen ? `<span class="pv-cen">🎯 ${esc(c.cen)} · meta ${c.meta}%</span>` : `<span class="pv-cen">meta ${c.meta}%</span>`}</div>
+        </div>`; }).join('')}
+      </div>
+      ${sem.length && !opts.semNota ? `<p class="small muted">${sem.length} corretor${sem.length > 1 ? 'es' : ''} com menos de 3 sessões avaliadas ficam fora desta leitura: ${sem.map(p => esc(p.nome)).join(', ')}.</p>` : ''}
+      <p class="small muted">Células = domínio de cada fase (vezes como ponto forte ÷ total de avaliações). Contorno = fase onde o corretor perde a venda: junta pontos de melhoria recentes e baixo domínio. Clique no nome para o plano completo.</p>`;
+  }
+  function perdaSection(e) {
+    return `<section class="block" id="perdaSec">
+      <div class="sec-h"><h2>Onde cada corretor perde a venda</h2>
+        <span class="hint">A fase da venda em que cada corretor mais trava e o caminho para resolver: competência-foco, técnica MetBook, cenário de treino e meta. Respeita os filtros do topo.</span></div>
+      <div class="card pad">${perdaTabela(e, filtrar(e))}</div>
+    </section>`;
   }
   // Frequência de uso: posição no time, mediana e recência em relação ao fim do período
   const dataBR = t => { const [d, m, y] = String(t || '').split('/').map(Number); return y ? new Date(y, m - 1, d) : null; };
@@ -916,6 +1108,7 @@ const DATA = {"gerado": "25/09/2026 19:04", "fonte": "dump-Metlife-25sept26-17h2
           : '<div class="small muted">Nenhuma fase com problema recorrente identificado.</div>'}</div>
         ${funilHTML(p, fc && fc.fase)}
       </div>
+      ${full ? caminhoHTML(e, p) : ''}
     </div>`;
   }
   function execSection(e) {
@@ -1221,9 +1414,33 @@ const DATA = {"gerado": "25/09/2026 19:04", "fonte": "dump-Metlife-25sept26-17h2
       <p class="hs-p">Competências que aparecem como ponto forte na maior parte das conversas avaliadas.</p>
       <div class="hs-fortes">${g.fortes.map(k => `<div class="hs-forte"><div class="hs-forte-v num">${g.dom[k].v}%</div><div class="hs-forte-t">${esc(sk(e, k).emoji)} ${esc(skN(k))}</div></div>`).join('')}</div>
     </div></section>`);
+    // 6 · A voz dos corretores (verbatim da pesquisa de 23 a 25/09/2026)
+    {
+      const Q = [
+        ['A ideia é sensacional. Ter uma IA feita para o nosso negócio… independente do tempo de casa.', 'João Vitor Maldonado', 'Gorilla', true],
+        ['Treinamento e feedback a qualquer momento! No dia a dia é bem difícil conseguir um role play.', 'Wilson Arita', 'Inside'],
+        ['Oportunidade de fazer uma autoanálise da minha abordagem.', 'Aline Almeida', 'Ark'],
+        ['Muito didático e profissional.', 'Marcelo Bernardes', 'Rivo Rio']
+      ];
+      const dest = Q.find(q => q[3]), resto = Q.filter(q => !q[3]);
+      blocos.push(`<section class="hs-cap"><div class="hs-cap-n">06</div><div class="hs-cap-b">
+        <h2 class="hs-h">A voz dos corretores</h2>
+        <p class="hs-p">Na pesquisa de encerramento do piloto, os corretores descreveram com as próprias palavras o valor da rhapsody. Alguns trechos das respostas:</p>
+        <div class="vz-kpis">
+          <div><b class="num">+38</b><span>NPS</span></div>
+          <div><b class="num">4,6</b><span>instruções claras</span></div>
+          <div><b class="num">4,5</b><span>feedback ajudou a achar melhorias concretas</span></div>
+          <div><b class="num">4,4</b><span>feedback coerente com a atuação</span></div>
+        </div>
+        <figure class="vz-dest"><blockquote>“${esc(dest[0])}”</blockquote><figcaption><b>${esc(dest[1])}</b> · ${esc(dest[2])}</figcaption></figure>
+        <div class="vz-grid3">${resto.map(q => `<figure class="vz-q"><blockquote>“${esc(q[0])}”</blockquote><figcaption><b>${esc(q[1])}</b> · ${esc(q[2])}</figcaption></figure>`).join('')}</div>
+        <p class="hs-fonte">Fonte: pesquisa com os corretores do piloto, respondida de 23 a 25/09/2026 (8 respostas, notas de 1 a 5). Trechos das respostas à pergunta “Qual foi o principal ponto positivo da plataforma?”.</p>
+      </div></section>`);
+    }
+
     // 6 · Tecnologia e método
     const nCen = [...new Set(ps.flatMap(p => Object.keys(p.cenarios || {})))].length;
-    blocos.push(`<section class="hs-cap"><div class="hs-cap-n">06</div><div class="hs-cap-b">
+    blocos.push(`<section class="hs-cap"><div class="hs-cap-n">07</div><div class="hs-cap-b">
       <h2 class="hs-h">Como a rhapsody mede cada conversa</h2>
       <p class="hs-p">Os números desta página não são opinião: saem de um processo automático e igual para todos os corretores, aplicado a cada simulação.</p>
       <ol class="hs-pipe">
@@ -1244,6 +1461,153 @@ const DATA = {"gerado": "25/09/2026 19:04", "fonte": "dump-Metlife-25sept26-17h2
       <p class="hs-fonte">Fontes: dados da plataforma rhapsody até ${esc(e.ultimoRun || e.periodo[1])}. Tempo de correção e perguntas abertas: relatório de acompanhamento do piloto de 28/08/2026 (128 simulações de julho e agosto).</p>
     </div></section>`);
 
+    // 7 · O que o mapa revela
+    {
+      const fz = FASES.map(f => { let S = 0, G = 0; f.sk.forEach(k => { S += g.dom[k].s; G += g.dom[k].g; }); return { ...f, v: S + G >= 3 ? Math.round(S / (S + G) * 100) : null }; }).filter(f => f.v != null).sort((a, b) => b.v - a.v);
+      const fForte = fz[0], fFraca = fz[fz.length - 1];
+      const resolvida = evo[0];
+      const nomes = arr => arr.map(p => `<button type="button" class="hs-nm" data-person="${esc(p.nome)}">${esc(p.nome)}</button>`).join('');
+      const rapido = corretores.filter(p => p.n >= 3 && p.deltaPct >= 15).sort((a, b) => b.deltaPct - a.deltaPct);
+      const semEvol = corretores.filter(p => p.n >= 8 && p.deltaPct != null && p.deltaPct <= 0);
+      const parou = corretores.filter(p => p.n >= 3 && p.deltaPct > 0 && !p.runs30);
+      const ex = corretores.filter(p => p.n >= 10 && p.deltaPct > 0).sort((a, b) => b.n - a.n)[0];
+      const exEvo = ex && (ex.evoluiu || []).find(v => v.tipo === 'dominio' && v.delta > 0);
+      const exFase = ex && ex.prios && ex.prios[0] ? faseDe(ex.prios[0].k) : null;
+      blocos.push(`<section class="hs-cap"><div class="hs-cap-n">08</div><div class="hs-cap-b">
+        <h2 class="hs-h">O que o mapa de competências revela</h2>
+        <p class="hs-p">O mapa transforma ${conversas} conversas de treino em respostas para três perguntas que hoje a MetLife só responde por intuição ou acompanhamento de campo: <b>o que o time já sabe fazer, onde está perdendo venda e quem precisa de ajuda em quê.</b></p>
+        <div class="hs-niveis">
+          <div class="hs-nv"><span class="hs-nv-e">Nível 1 · Rede</span><b>Onde investir o treinamento</b>
+            <ul>
+              ${fForte && fFraca ? `<li>Fase mais forte: <b>${esc(fForte.nome)}</b> (${fForte.v}%). Fase mais fraca: <b>${esc(fFraca.nome)}</b> (${fFraca.v}%). O treino vai direto ao ponto fraco.</li>` : ''}
+              ${resolvida ? `<li><b>${esc(skN(resolvida.k))}</b> foi de ${resolvida.ini}% para ${resolvida.rec}% de domínio: tema que pode dar lugar a outro na pauta.</li>` : ''}
+              ${falaMelhor ? `<li>Postura medida pelo áudio: fala do corretor ÷ cliente de ${f1(pr.falaIni)}× para ${f1(pr.falaRec)}×${turnoMelhor ? `, trocas de ${f1(pr.turnosIni)} para ${f1(pr.turnosRec)}` : ''}.</li>` : ''}
+            </ul></div>
+          <div class="hs-nv"><span class="hs-nv-e">Nível 2 · Equipes e cidades</span><b>Comparar e replicar</b>
+            <ul>
+              <li>Filtros por equipe, agência e cidade mostram quem treina mais, quem evolui mais e em qual fase cada grupo trava.</li>
+              <li>A equipe forte em uma fase vira referência para as outras; a que trava recebe um cenário específico.</li>
+              <li>Hoje: ${equipes.length} equipes e ${cidades.length} cidades lado a lado no mesmo painel.</li>
+            </ul></div>
+          <div class="hs-nv"><span class="hs-nv-e">Nível 3 · Corretor</span><b>Um plano individual pronto</b>
+            <ul>
+              <li>Frequência de uso, pontos fortes, o que evoluiu e as 3 prioridades de cada pessoa.</li>
+              <li>A fase da venda que cada corretor precisa melhorar, com a técnica MetBook e o cenário indicado.</li>
+              <li>Trechos reais dos debriefings, com a frase que faltou.</li>
+            </ul></div>
+        </div>
+        ${ex ? `<h3 class="hs-sub">Exemplo de leitura individual</h3>
+        <button type="button" class="hs-ex" data-person="${esc(ex.nome)}">
+          <div class="hs-ex-h"><b>${esc(ex.nome)}</b><span class="muted small">${esc([ex.equipe, ex.cidade].filter(Boolean).join(' · '))} · ${ex.n} sessões avaliadas</span></div>
+          <div class="hs-ex-g">
+            <div><span>Nota</span><b class="num">${f1(ex.scoreIni)} → ${f1(ex.scoreRec)}</b><em class="delta up">▲ +${f1(ex.deltaPct)}%</em></div>
+            ${exEvo ? `<div><span>Maior evolução</span><b>${esc(skN(exEvo.k))}</b><em class="num">${exEvo.ini}% → ${exEvo.rec}%</em></div>` : ''}
+            ${ex.prios && ex.prios[0] ? `<div><span>Próximo foco</span><b>${esc(skN(ex.prios[0].k))}</b><em>${exFase ? esc(exFase.nome) : ''}</em></div>` : ''}
+            <div><span>Ritmo</span><b class="num">${f1(ex.runsSemana || 0)}/semana</b><em>${ex.ultimoRun ? 'última em ' + esc(ex.ultimoRun) : ''}</em></div>
+          </div>
+          <span class="hs-ex-cta">Abrir o resumo completo →</span>
+        </button>` : ''}
+        <h3 class="hs-sub">Onde cada corretor perde a venda, e o caminho para resolver</h3>
+        <div class="hs-pv">${perdaTabela(e, corretores)}</div>
+        <h3 class="hs-sub">Sinais que o mapa mostra antes dos números de venda</h3>
+        <div class="hs-sinais">
+          ${rapido.length ? `<div class="hs-si ok"><b>Evoluindo rápido</b><span>Nota subiu 15% ou mais. Candidatos a referência e mentoria.</span><div class="hs-nms">${nomes(rapido)}</div></div>` : ''}
+          ${semEvol.length ? `<div class="hs-si at"><b>Treina muito, nota não sobe</b><span>Volume alto sem progresso: sinal para acompanhamento humano, não para mais simulações.</span><div class="hs-nms">${nomes(semEvol)}</div></div>` : ''}
+          ${parou.length ? `<div class="hs-si wa"><b>Tinha resultado e parou</b><span>Nota subiu, mas sem simulações nos últimos 30 dias. Uma conversa do líder recupera.</span><div class="hs-nms">${nomes(parou)}</div></div>` : ''}
+          ${faltam > 0 ? `<div class="hs-si nt"><b>Ainda não começou</b><span>${faltam} dos ${plan.length} corretores cadastrados sem nenhuma simulação. O mapa mostra quem são, por equipe.</span></div>` : ''}
+        </div>
+        <h3 class="hs-sub">O que a liderança ganha</h3>
+        <div class="hs-ganhos">
+          <div><b>Pauta de 1:1 pronta</b><span>Em vez de “como estão as vendas?”, “sua neutralização subiu, vamos trabalhar o fechamento”.</span></div>
+          <div><b>Alerta antecipado</b><span>Quem parou ou treina sem evoluir aparece antes de afetar a produção.</span></div>
+          <div><b>Mentoria entre corretores</b><span>Juntar quem domina uma competência com quem está fraco nela.</span></div>
+          <div><b>Onboarding mais rápido</b><span>Diagnóstico da abordagem do corretor novo na primeira semana, antes de gastar leads reais.</span></div>
+          <div><b>Retorno do treinamento provado</b><span>Evolução medida antes e depois de cada ação, por competência e por fase da venda.</span></div>
+          <div><b>Treinamentos MetBook mais precisos</b><span>Os debriefings trazem casos reais e as frases exatas que faltaram ao próprio time.</span></div>
+        </div>
+        <p class="hs-quote">“O mapa mostra, toda semana, onde cada corretor está perdendo a venda, antes de ele perdê-la com um cliente de verdade.”</p>
+        <p class="hs-fonte">A leitura individual ganha força a partir de cerca de 5 sessões avaliadas por corretor; abaixo disso, trate como tendência.</p>
+      </div></section>`);
+    }
+
+    // 8 · Turnover
+    {
+      const perdas = corretores.filter(p => p.n >= 3).map(p => caminho(e, p)).filter(Boolean);
+      const fObj = FASES.find(f => f.id === 'obj');
+      const nObj = perdas.filter(c => c.f.id === 'obj').length;
+      const eObj = (g.evoluiu || []).filter(v => v.tipo === 'dominio' && v.delta > 0 && fObj.sk.includes(v.k));
+      const domObj = (() => { let S = 0, G = 0; fObj.sk.forEach(k => { S += g.dom[k].s; G += g.dom[k].g; }); return S + G ? Math.round(S / (S + G) * 100) : null; })();
+      const parouN = corretores.filter(p => p.n >= 3 && p.deltaPct > 0 && !p.runs30).length;
+      const semEvN = corretores.filter(p => p.n >= 8 && p.deltaPct != null && p.deltaPct <= 0).length;
+      const curva = [['Entrada', 100], ['1º ano', 77], ['2º ano', 36], ['3º ano', 22], ['4º ano', 16]];
+      blocos.push(`<section class="hs-cap"><div class="hs-cap-n">09</div><div class="hs-cap-b">
+        <h2 class="hs-h">Menos corretores desistindo: saber onde cada um trava e acompanhar</h2>
+        <p class="hs-p">A rotatividade é o custo mais caro e menos visível de uma rede de corretores: cada saída leva junto o investimento em recrutamento, habilitação, onboarding e a carteira que estava começando. A tese da rhapsody é simples: <b>o corretor desiste quando ouve “não” sem saber o que fazer com ele</b>. Descobrir cedo onde cada um trava, treinar exatamente esse ponto e acompanhar de perto reduz a desistência.</p>
+
+        <h3 class="hs-sub">O tamanho do problema</h3>
+        <div class="to-curva">${curva.map(([r, v]) => `<div class="to-c"><span class="to-c-b" style="height:${v}%"><b class="num">${v}</b></span><span class="to-c-r">${r}</span></div>`).join('')}</div>
+        <p class="small muted">De cada 100 profissionais que entram na venda de seguros de vida, quantos permanecem ao fim de cada ano. Referência de mercado: pesquisa LIMRA/LOMA (EUA), citada pelo CQCS. A maior perda acontece entre o 1º e o 2º ano. Vale substituir pelos números da MetLife.</p>
+
+        <h3 class="hs-sub">Por que o corretor desiste, e onde o mapa enxerga isso</h3>
+        <div class="to-cadeia">
+          <div><b>Trava em uma fase</b><span>Não domina a técnica na hora crítica da conversa</span></div>
+          <div><b>Ouve “não” repetidamente</b><span>Sem saber tratar a objeção, a venda para ali</span></div>
+          <div><b>Produção baixa, confiança cai</b><span>A comissão não vem e a autoconfiança diminui</span></div>
+          <div class="fim"><b>Desiste</b><span>Normalmente no 1º ou 2º ano</span></div>
+        </div>
+        <p class="hs-nota">No piloto, a fase em que a rede mais trava é justamente a do “não” do cliente: <b>${esc(fObj.nome.toLowerCase())}, com ${domObj}% de domínio</b>${perdas.length ? `, e <b>${nObj} de ${perdas.length}</b> corretores com base suficiente perdem a venda ali` : ''}. É exatamente o ponto que alimenta a desistência, e agora ele é visível corretor a corretor.</p>
+
+        <h3 class="hs-sub">As metodologias que sustentam a abordagem</h3>
+        <div class="to-met">
+          <div><span class="to-met-t">Autoeficácia · Albert Bandura</span><b>Confiança nasce de vitórias vividas</b><span>A fonte mais forte de autoconfiança são as experiências de domínio. <i>Na rhapsody:</i> o corretor vence a objeção na simulação antes de ouvi-la de um cliente real.</span></div>
+          <div><span class="to-met-t">Prática deliberada · Anders Ericsson</span><b>Treino focado no ponto fraco</b><span>A evolução vem de repetir o que ainda não se domina, com feedback imediato. <i>Na rhapsody:</i> o mapa aponta a competência-foco e o debriefing chega ao fim de cada conversa.</span></div>
+          <div><span class="to-met-t">Curva do esquecimento · Ebbinghaus</span><b>Treino pontual se perde em dias</b><span>Sem revisão, a maior parte do que se aprende some rapidamente (replicado por Murre &amp; Dros, 2015). <i>Na rhapsody:</i> prática espaçada, 2 simulações por semana, em vez de um treinamento por semestre.</span></div>
+          <div><span class="to-met-t">Coaching em vendas · CEB / Sales Executive Council</span><b>O líder faz a diferença no meio da curva</b><span>Entre os 60% de desempenho médio, quem tinha os melhores coaches rendeu até 19% mais do que quem tinha os piores. <i>Na rhapsody:</i> o líder recebe o diagnóstico pronto para um coaching preciso.</span></div>
+          <div><span class="to-met-t">Avaliação de treinamento · Kirkpatrick</span><b>Medir os 4 níveis, não só a satisfação</b><span>Reação, aprendizado, comportamento e resultado. <i>Na rhapsody:</i> a pesquisa mede a reação, o mapa mede aprendizado e comportamento, e a fase 2 mede o resultado em retenção.</span></div>
+        </div>
+
+        <h3 class="hs-sub">O ciclo de retenção</h3>
+        <ol class="to-ciclo">
+          <li><b>Diagnosticar</b><span>O mapa mostra a fase em que o corretor perde a venda</span></li>
+          <li><b>Treinar</b><span>Cenário focado nessa fase, com a técnica MetBook</span></li>
+          <li><b>Acompanhar</b><span>O líder usa o resumo individual no 1:1</span></li>
+          <li><b>Medir</b><span>Nova leitura do mapa: o domínio subiu?</span></li>
+          <li><b>Reconhecer</b><span>A evolução visível devolve a confiança</span></li>
+        </ol>
+        ${parouN || semEvN ? `<p class="hs-nota">O mapa também funciona como <b>alerta antecipado de desistência</b>: hoje ${parouN ? `<b>${parouN}</b> corretores tinham resultado e pararam de treinar` : ''}${parouN && semEvN ? ' e ' : ''}${semEvN ? `<b>${semEvN}</b> treina${semEvN > 1 ? 'm' : ''} muito sem ver a nota subir` : ''}. São exatamente os perfis que o líder precisa chamar para conversar antes que desanimem.</p>` : ''}
+
+        <h3 class="hs-sub">O que o piloto já mostrou</h3>
+        <div class="hs-grid3">
+          ${eObj.length ? `<div class="hs-fato"><div class="hs-fato-v num">+${eObj[0].delta} pts</div><div>em <b>${esc(skN(eObj[0].k).toLowerCase())}</b> (${eObj[0].ini}% → ${eObj[0].rec}%): a fase do “não” começou a virar.</div></div>` : ''}
+          ${evo[0] ? `<div class="hs-fato"><div class="hs-fato-v num">${evo[0].ini}% → ${evo[0].rec}%</div><div>de domínio em <b>${esc(skN(evo[0].k).toLowerCase())}</b>, base para entender o cliente antes de oferecer.</div></div>` : ''}
+          <div class="hs-fato"><div class="hs-fato-v num">4,5 / 5</div><div>“o feedback ajudou a identificar pontos concretos de melhoria”, na pesquisa com os corretores.</div></div>
+        </div>
+        <div class="to-quotes">
+          <blockquote>“A ideia é sensacional. Ter uma IA feita para nosso negócio, com instruções claras para nosso corretor, <b>independente do tempo de casa, em diferentes momentos da carreira</b>. Ideia incrível”<cite>João Vitor Maldonado · Gorilla</cite></blockquote>
+          <blockquote>“Treinamento e feedback a qualquer momento! <b>No dia a dia é bem difícil conseguir um rolê play</b> e é diferente qdo fazemos com perfis diferentes.”<cite>Wilson Arita · Inside</cite></blockquote>
+        </div>
+
+        <h3 class="hs-sub">Quanto vale reter mais corretores</h3>
+        <div class="to-calc">
+          <label><span>Novos corretores por ano</span><input type="number" min="0" step="10" value="100" data-to="novos"></label>
+          <label><span>Permanecem ao fim do 2º ano (%)</span><input type="number" min="0" max="100" value="36" data-to="ret"></label>
+          <label><span>Ganho de retenção esperado (pontos)</span><input type="number" min="0" max="50" value="5" data-to="ganho"></label>
+          <label><span>Custo de reposição por corretor (R$)</span><input type="number" min="0" step="1000" value="20000" data-to="custo"></label>
+          <div class="to-out" id="toOut"></div>
+        </div>
+        <p class="small muted">Valores iniciais de exemplo: a retenção vem da referência LIMRA/LOMA e o custo de reposição é hipotético. Ajuste com os números da MetLife (recrutamento, habilitação, onboarding e produção perdida).</p>
+
+        <h3 class="hs-sub">Como vamos provar na fase 2</h3>
+        <div class="hs-foco">
+          <div><b>Retenção dos novatos</b><span>Permanência em 90 e 180 dias dos corretores novos que treinam na rhapsody, comparada com a dos que ainda não treinam.</span></div>
+          <div><b>Tempo até a primeira venda</b><span>Quanto tempo o corretor novo leva para fechar a primeira apólice.</span></div>
+          <div><b>Domínio na fase do “não”</b><span>Evolução de ${esc(fObj.nome.toLowerCase())} de ${domObj}% para a meta de 50%.</span></div>
+          <div><b>Engajamento como sinal de risco</b><span>Quem para de treinar ou treina sem evoluir recebe acompanhamento do líder em até 1 semana.</span></div>
+        </div>
+        <p class="hs-fonte">O piloto mediu aprendizado e comportamento. O efeito sobre a retenção é a hipótese que a fase 2 foi desenhada para medir, com os novatos das 3 regionais.</p>
+      </div></section>`);
+    }
+
     // 7 · Próxima fase: desafios e linha de ataque
     const fases = FASES.map(f => { let S = 0, G = 0; f.sk.forEach(k => { S += g.dom[k].s; G += g.dom[k].g; }); return { ...f, S, G, v: S + G >= 3 ? Math.round(S / (S + G) * 100) : null }; }).filter(f => f.v != null);
     const fase = fases.slice().sort((a, b) => a.v - b.v)[0];
@@ -1253,7 +1617,7 @@ const DATA = {"gerado": "25/09/2026 19:04", "fonte": "dump-Metlife-25sept26-17h2
     const mPico = mc.slice().sort((a, b) => (b.runs - b.lideranca) - (a.runs - a.lideranca))[0], mUlt = mc[mc.length - 1];
     const caiu = mPico && mUlt && mUlt !== mPico && mUlt.corretores < mPico.corretores;
     const sabrina = lideres[0];
-    if (fase) blocos.push(`<section class="hs-cap"><div class="hs-cap-n">07</div><div class="hs-cap-b">
+    if (fase) blocos.push(`<section class="hs-cap"><div class="hs-cap-n">10</div><div class="hs-cap-b">
       <h2 class="hs-h">Próxima fase: onde atacar</h2>
       <p class="hs-p">O piloto também mostrou, com precisão, <b>onde está o maior ganho</b>. Medindo o domínio de cada fase da venda nas ${e.sessoes} conversas avaliadas, uma fase se destaca como a mais desafiadora para a rede:</p>
       <div class="hs-funil">${fases.map(f => `<div class="hs-fl ${f.id === fase.id ? 'alvo' : ''}">
@@ -1289,7 +1653,7 @@ const DATA = {"gerado": "25/09/2026 19:04", "fonte": "dump-Metlife-25sept26-17h2
     </div></section>`);
 
     // 8 · Liderança
-    blocos.push(`<section class="hs-cap"><div class="hs-cap-n">08</div><div class="hs-cap-b">
+    blocos.push(`<section class="hs-cap"><div class="hs-cap-n">11</div><div class="hs-cap-b">
       <h2 class="hs-h">Como a liderança MetLife pode impulsionar o uso</h2>
       <p class="hs-p">Ferramenta de treino não se sustenta sozinha: o corretor treina quando percebe que o líder acompanha, reconhece e usa o resultado. ${sabrina && sabrina.runs ? `A própria liderança já mostrou o caminho: <b>${esc(sabrina.nome)}</b> fez ${sabrina.runs} simulações no piloto. ` : ''}Sete rituais simples, que cabem na rotina que as equipes já têm:</p>
       <div class="hs-rituais">
@@ -1325,8 +1689,7 @@ const DATA = {"gerado": "25/09/2026 19:04", "fonte": "dump-Metlife-25sept26-17h2
     return `<div class="hs">
       <header class="hs-hero">
         <div class="hs-eyebrow">Piloto MetLife × rhapsody · ${esc(e.periodo[0])} a ${esc(e.ultimoRun || e.periodo[1])}</div>
-        <h1 class="hs-titulo">${altaMes > 0 ? `Em ${semanas} semanas, a nota dos corretores subiu <em>${Math.round(altaMes)}%</em>` : `Em ${semanas} semanas, <em>${conversas} conversas</em> de venda consultiva`}</h1>
-        <p class="hs-lead">Corretores parceiros MetLife treinaram prospecção, argumentação e fidelização em conversas por voz com a rhapsody, com feedback imediato sobre as técnicas do MetBook.</p>
+        <h1 class="hs-titulo hs-titulo-xl">Quem pratica, evolui.<br><em>Quem evolui, quer continuar.</em></h1>
         <div class="hs-kpis">
           <div><b class="num">${conversas}</b><span>conversas de treino${ct ? ` de ${ct.iniciadas} simulações iniciadas` : ''}</span></div>
           <div><b class="num">${f1(pr.horas || 0)} h</b><span>de conversa praticada</span></div>
@@ -1351,6 +1714,7 @@ const DATA = {"gerado": "25/09/2026 19:04", "fonte": "dump-Metlife-25sept26-17h2
   function render() {
     renderTabs();
     $('main').innerHTML = state.tab === 'historia' ? renderHistoria() : state.tab === 'geral' ? renderGeral() : state.tab === 'guia' ? renderGuia() : renderEmpresa(EMP[state.tab]);
+    calcTurnover();
     if (EMP[state.tab] && !EMP[state.tab].vazio) initGeo(EMP[state.tab]); else if (geoMap) { geoMap.remove(); geoMap = null; }
   }
 
@@ -1494,6 +1858,7 @@ const DATA = {"gerado": "25/09/2026 19:04", "fonte": "dump-Metlife-25sept26-17h2
       </section>
 
       ${funilSection(e)}
+      ${perdaSection(e)}
 
       <section class="block">
         <div class="sec-h"><h2>O que evoluiu até agora</h2>
@@ -1728,7 +2093,17 @@ const DATA = {"gerado": "25/09/2026 19:04", "fonte": "dump-Metlife-25sept26-17h2
     const r = e.target.closest('[data-rows]'); if (r) { state.rows = r.dataset.rows; render(); return; }
     const m = e.target.closest('[data-metric]'); if (m) { state.metric = m.dataset.metric; render(); return; }
   });
+  function calcTurnover() {
+    const out = document.getElementById('toOut'); if (!out) return;
+    const v = k => { const el = document.querySelector(`[data-to="${k}"]`); return el ? Math.max(0, +el.value || 0) : 0; };
+    const novos = v('novos'), ret = Math.min(100, v('ret')), ganho = Math.min(100 - ret, v('ganho')), custo = v('custo');
+    const retidos = Math.round(novos * ganho / 100), econ = retidos * custo;
+    const brl = n => 'R$ ' + Math.round(n).toLocaleString('pt-BR');
+    out.innerHTML = `<div><b class="num">${retidos}</b><span>corretores a mais permanecendo por ano (${ret}% → ${ret + ganho}%)</span></div>
+      <div><b class="num">${brl(econ)}</b><span>de custo de reposição evitado por ano</span></div>`;
+  }
   $('main').addEventListener('input', e => {
+    if (e.target.closest('.to-calc')) { calcTurnover(); return; }
     if (e.target.id === 'fQ') {
       state.f.q = e.target.value;
       clearTimeout(window.__fq); window.__fq = setTimeout(() => {
