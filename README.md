@@ -50,3 +50,4 @@ git commit -am "Atualiza dados até DD/MM" && git push         # a Cloudflare pu
 - **Evolução:** 1ª metade × 2ª metade das sessões em ordem de data.
 - **Frequência de uso:** runs (todas as simulações iniciadas). Por semana = runs ÷ semanas do programa. Uso frequente ≥ 2/semana; moderado de 1 a 2; baixo < 1.
 - **Nota média por mês:** só corretores (sem a liderança) e só os meses com sessões de corretores.
+- **Nota média (indicador):** média simples das notas médias mensais (m1, m2, m3…), cada mês com o mesmo peso, sem ponderar pelo número de sessões ou runs. A linha de tendência do gráfico mensal segue a mesma regra.
